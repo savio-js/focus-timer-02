@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --hue: 250;
+  --bg-color: hsl(var(--hue), 40%, 98%); 
+  --text-color: hsl(var(--hue), 5%, 7%);
+  --primary-color: hsl(var(--hue), 100%, 63%);
+  --controls-bg-color: hsl(var(--hue), 0%, 14%);
+  --secund-bg-color: hsl(var(--hue), 40%, 98%);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --text-color:  hsl(var(--hue), 40%, 98%);
+  --bg-color: hsl(var(--hue), 5%, 7%); 
+}
+
+html.light  .ph-moon ,
+html:not(.light) .ph-sun{
+  display: none;
+}
+
+#toggle-mode{
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+  cursor: pointer;
+  line-height: 0;
+  color: var(--text-color);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  font-family: "Roboto", sans-serif;
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10rem;
+
+  min-width: 82rem;
+  max-width: 100rem;
+}
+
+#timer {
+  font-size: 10rem;
+  font-weight: bold;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 1.6rem;
+  border-radius: 999rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+
+  cursor: pointer;
+
+  font-size: 6.4rem;
+}
+
+.card-sounds section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+
+}
+
+.card-sounds section button{
+  background: #E1E1E6;
+
+  padding: 4rem;
+  border-radius: 2.4rem;
+  cursor: pointer;
+}
+
+.card-sounds section button:not(.light){
+  color: black;
+}
+
+.card-sounds section button.music{
+  background: #02799D;
+  color: white;
+}
+
+.secondary {
+ color: var(--text-color);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle {
+  display: none;
+}
